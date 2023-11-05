@@ -10,12 +10,14 @@ const YouTubeVideo = (props) => {
 
   return (
     <a-scene>
+      <a-assets>
+        <video id="video" controls={true} autoPlay={true} crossOrigin="anonymous" src={props.src}> </video>
+      </a-assets>
       <a-videosphere
-        src={props.src}
+        src="#video"
         width={props.width}
         height={props.height}
         position={props.position}
-        onClick={handleClick}
       ></a-videosphere>
     </a-scene>
   );
